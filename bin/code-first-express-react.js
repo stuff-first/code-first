@@ -1,3 +1,5 @@
-const lib = require('../lib');
+#!/usr/bin/env node
 
-lib.cfer();
+const { cfer } = require('../lib');
+
+cfer();
