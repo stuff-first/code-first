@@ -1,3 +1,3 @@
-const { cfer } = require('../lib');
+const lib = require('../lib');
 
-cfer();
+lib.cfer();
