@@ -2,7 +2,9 @@
   "name": "code-first-express-react",
   "version": "0.0.1",
   "description": "The purpose of this package is to build an express app with a react frontend based off of sequelize models.",
-  "main": "index.js",
+  "bin": {
+    "cfer": "./bin/code-first-express-react.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
