@@ -1,0 +1,27 @@
+{
+  "name": "code-first-express-react",
+  "version": "0.0.1",
+  "description": "The purpose of this package is to build an express app with a react frontend based off of sequelize models.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stuff-first/code-first-express-react.git"
+  },
+  "keywords": [
+    "express",
+    "react",
+    "sequelize",
+    "code",
+    "first",
+    "material-ui"
+  ],
+  "author": "Taylor Blanche",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stuff-first/code-first-express-react/issues"
+  },
+  "homepage": "https://github.com/stuff-first/code-first-express-react#readme"
+}
