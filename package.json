@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/stuff-first/code-first-express-react#readme",
   "dependencies": {
+    "create-react-app": "^3.0.1",
     "sequelize": "^5.8.6",
     "sequelize-cli": "^5.4.0",
     "shelljs": "^0.8.3",
