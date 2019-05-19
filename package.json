@@ -1,6 +1,6 @@
 {
   "name": "code-first-express-react",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "The purpose of this package is to build an express app with a react frontend based off of sequelize models.",
   "bin": {
     "cfer": "./bin/code-first-express-react.js"
