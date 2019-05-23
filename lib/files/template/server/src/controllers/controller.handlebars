@@ -24,13 +24,15 @@ module.exports = {
   findAllFull: function(req, res) {
     db.{{upper}}
       .findAll({
-          where: req.query
-        },
-        includes: [
-        {{#each associations }}
-            db.{{upper}}
-        {{/each }}
-        ])
+          where: req.query,
+            include: [
+            {{#each associations }}
+            {
+                model: db.{{upper}}
+            }
+            {{/each }}
+            ]
+        })
       .then(db{{upper}} => res.json(db{{upper}}))
       .catch(err => res.status(422).json(err));
   },
@@ -40,11 +42,13 @@ module.exports = {
           where: {
               id: req.params.id
           },
-        includes: [
-        {{#each associations }}
-            db.{{upper}}
-        {{/each }}
-        ]
+            include: [
+            {{#each associations }}
+            {
+                model: db.{{upper}}
+            }
+            {{/each }}
+            ]
       })
       .then(db{{upper}} => res.json(db{{upper}}))
       .catch(err => res.status(422).json(err));
