@@ -1,0 +1,16 @@
+const router = require("express").Router();
+const {{lower}}Controller = require("../../controllers/{{lower}}Controller");
+
+// Matches with "/api/{{lower}}"
+router.route("/")
+  .get({{lower}}Controller.findAll)
+  .post({{lower}}Controller.create);
+
+// Matches with "/api/{{lower}}/:id"
+router
+  .route("/:id")
+  .get({{lower}}Controller.findById)
+  .put({{lower}}Controller.update)
+  .delete({{lower}}Controller.remove);
+
+module.exports = router;

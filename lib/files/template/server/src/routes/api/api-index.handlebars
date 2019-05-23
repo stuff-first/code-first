@@ -1,0 +1,11 @@
+const router = require("express").Router();
+{{#each models }}
+const {{this.lower}}Routes = require("./{{this.lower}}s");
+{{/each }}
+
+{{#each models }}
+// {{this.upper}} routes
+router.use("/{{this.lower}}s", {{this.lower}}Routes);
+{{/each }}
+
+module.exports = router;

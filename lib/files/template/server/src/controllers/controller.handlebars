@@ -1,0 +1,71 @@
+const db = require("../models");
+
+// Defining methods for the {{lower}}sController
+module.exports = {
+  findAll: function(req, res) {
+    db.{{upper}}
+      .findAll({
+          where: req.query
+        })
+      .then(db{{upper}} => res.json(db{{upper}}))
+      .catch(err => res.status(422).json(err));
+  },
+  findById: function(req, res) {
+    db.{{upper}}
+      .findOne({
+          where: {
+              id: req.params.id
+          }
+      })
+      .then(db{{upper}} => res.json(db{{upper}}))
+      .catch(err => res.status(422).json(err));
+  },
+  {{#if associated }}
+  findAllFull: function(req, res) {
+    db.{{upper}}
+      .findAll({
+          where: req.query
+        },
+        includes: [
+        {{#each associations }}
+            db.{{upper}}
+        {{/each }}
+        ])
+      .then(db{{upper}} => res.json(db{{upper}}))
+      .catch(err => res.status(422).json(err));
+  },
+  findByIdFull: function(req, res) {
+    db.{{upper}}
+      .findOne({
+          where: {
+              id: req.params.id
+          },
+        includes: [
+        {{#each associations }}
+            db.{{upper}}
+        {{/each }}
+        ]
+      })
+      .then(db{{upper}} => res.json(db{{upper}}))
+      .catch(err => res.status(422).json(err));
+  },
+  {{/if }}
+  create: function(req, res) {
+    db.{{upper}}
+      .create(req.body)
+      .then(db{{upper}} => res.json(db{{upper}}))
+      .catch(err => res.status(422).json(err));
+  },
+  update: function(req, res) {
+    db.{{upper}}
+      .update(req.body, { where: { id: req.params.id } })
+      .then(db{{upper}} => res.json(db{{upper}}))
+      .catch(err => res.status(422).json(err));
+  },
+  remove: function(req, res) {
+    db.{{upper}}
+      .destroy({ where: { id: req.params.id } })
+      .then(db{{upper}} => res.json(db{{upper}}))
+      .catch(err => res.status(422).json(err));
+  }
+};
