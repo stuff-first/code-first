@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const {{lower}}Controller = require("../../controllers/{{lower}}Controller");
 
+{{#if associatiated }}
 // Matches with "/api/{{lower}}"
 router.route("/")
   .get({{lower}}Controller.findAll)
@@ -12,5 +13,32 @@ router
   .get({{lower}}Controller.findById)
   .put({{lower}}Controller.update)
   .delete({{lower}}Controller.remove);
+{{else}}
+// Matches with "/api/short/{{lower}}"
+router.route("/short/")
+  .get({{lower}}Controller.findAll);
+
+// Matches with "/api/short/{{lower}}/:id"
+router.route("/short/:id")
+  .get({{lower}}Controller.findById);
+
+// Matches with "/api/full/{{lower}}"
+router.route("/full/")
+  .get({{lower}}Controller.findAllFull);
+
+// Matches with "/api/full/{{lower}}/:id"
+router.route("/full/:id")
+  .get({{lower}}Controller.findByIdFull);
+
+// Matches with "/api/{{lower}}"
+router.route("/")
+  .post({{lower}}Controller.create);
+
+// Matches with "/api/{{lower}}/:id"
+router
+  .route("/:id")
+  .put({{lower}}Controller.update)
+  .delete({{lower}}Controller.remove);
+{{/if}}
 
 module.exports = router;
