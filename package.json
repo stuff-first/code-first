@@ -1,6 +1,6 @@
 {
   "name": "code-first",
-  "version": "0.0.45",
+  "version": "0.0.46",
   "description": "The purpose of this package is to build an express app with a react frontend based off of sequelize models.",
   "bin": {
     "code-first": "./bin/code-first.js"
