@@ -1,44 +1,44 @@
 const router = require("express").Router();
-const {{lower}}Controller = require("../../controllers/{{lower}}sController");
+const {{lowerPlural}}Controller = require("../../controllers/{{lowerPlural}}Controller");
 
 {{#if associatiated }}
-// Matches with "/api/{{lower}}"
+// Matches with "/api/{{lowerPlural}}"
 router.route("/")
-  .get({{lower}}Controller.findAll)
-  .post({{lower}}Controller.create);
+  .get({{lowerPlural}}Controller.findAll)
+  .post({{lowerPlural}}Controller.create);
 
-// Matches with "/api/{{lower}}/:id"
+// Matches with "/api/{{lowerPlural}}/:id"
 router
   .route("/:id")
-  .get({{lower}}Controller.findById)
-  .put({{lower}}Controller.update)
-  .delete({{lower}}Controller.remove);
+  .get({{lowerPlural}}Controller.findById)
+  .put({{lowerPlural}}Controller.update)
+  .delete({{lowerPlural}}Controller.remove);
 {{else}}
-// Matches with "/api/short/{{lower}}"
-router.route("/short/")
-  .get({{lower}}Controller.findAll);
+// Matches with "/api/{{lowerPlural}}/short"
+router.route("/short")
+  .get({{lowerPlural}}Controller.findAll);
 
-// Matches with "/api/short/{{lower}}/:id"
+// Matches with "/api/{{lowerPlural}}/short/:id"
 router.route("/short/:id")
-  .get({{lower}}Controller.findById);
+  .get({{lowerPlural}}Controller.findById);
 
-// Matches with "/api/full/{{lower}}"
-router.route("/full/")
-  .get({{lower}}Controller.findAllFull);
+// Matches with "/api/{{lowerPlural}}/full"
+router.route("/full")
+  .get({{lowerPlural}}Controller.findAllFull);
 
-// Matches with "/api/full/{{lower}}/:id"
+// Matches with "/api/{{lowerPlural}}/full/:id"
 router.route("/full/:id")
-  .get({{lower}}Controller.findByIdFull);
+  .get({{lowerPlural}}Controller.findByIdFull);
 
-// Matches with "/api/{{lower}}"
+// Matches with "/api/{{lowerPlural}}"
 router.route("/")
-  .post({{lower}}Controller.create);
+  .post({{lowerPlural}}Controller.create);
 
-// Matches with "/api/{{lower}}/:id"
+// Matches with "/api/{{lowerPlural}}/:id"
 router
   .route("/:id")
-  .put({{lower}}Controller.update)
-  .delete({{lower}}Controller.remove);
+  .put({{lowerPlural}}Controller.update)
+  .delete({{lowerPlural}}Controller.remove);
 {{/if}}
 
 module.exports = router;
